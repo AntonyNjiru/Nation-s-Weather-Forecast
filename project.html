@@ -7,11 +7,16 @@
     <link rel="stylesheet" href="project.css">
 </head>
 <body>
-    <div class="container">
-        <h1> Nation's Weather Forecast</h1>
-         <input type="text" id="city" placeholder="Enter city name">
-        <button onclick="getWeather()">Get Weather</button>
-        <div id="result"></div>
+    <h1> Nation's Weather Forecast</h1>
+    <div class="search-container">
+      <input type="text" id="city-input" placeholder="Enter City Name">
+      <button id="search-btn">Search</button>
+    </div>
+    <div class="weather-container">
+      <h2 id="city-name"></h2>
+      <img id="weather-icon" src="download (2).png" alt="Weather Icon">
+      <h3 id="temperature"></h3>
+      <p id="description"></p>
     </div>
 <script src="project.js"></script>
 
