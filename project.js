@@ -7,6 +7,7 @@ const temperature = document.getElementById('temperature');
 const description = document.getElementById('description');
 const windSpeed = document.getElementById('wind-speed'); 
 const humidity = document.getElementById('humidity'); 
+ 
 
 
 function getWeatherData(city) {
@@ -22,12 +23,26 @@ function getWeatherData(city) {
       windSpeed.textContent = `Wind Speed: ${data.wind.speed} m/s`;
       humidity.textContent = `Humidity: ${data.main.humidity}%`; 
 
+      const weatherContainer = document.querySelector('.weather-container');
+      weatherContainer.style.backgroundColor = getBackgroundColor(data.main.temp);
+   
     })
     .catch(error => {
       console.error(error);
       alert('Error fetching weather data!');
     });
 }
+function getBackgroundColor(temperature) {
+  // Example criteria, you can adjust these conditions as per your preference
+  if (temperature > 25) {
+    return '#ff6347'; // Red for hot weather
+  } else if (temperature < 10) {
+    return '#6495ed'; // Blue for cold weather
+  } else {
+    return '#f0f8ff'; // Default color
+  }
+}
+
 
 searchBtn.addEventListener('click', () => {
   const city = cityInput.value.trim();
