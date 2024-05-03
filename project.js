@@ -5,6 +5,9 @@ const cityName = document.getElementById('city-name');
 const weatherIcon = document.getElementById('weather-icon');
 const temperature = document.getElementById('temperature');
 const description = document.getElementById('description');
+const windSpeed = document.getElementById('wind-speed'); 
+const humidity = document.getElementById('humidity'); 
+
 
 function getWeatherData(city) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -16,6 +19,9 @@ function getWeatherData(city) {
       weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       temperature.textContent = `${Math.round(data.main.temp)}°C`;
       description.textContent = data.weather[0].description;
+      windSpeed.textContent = `Wind Speed: ${data.wind.speed} m/s`;
+      humidity.textContent = `Humidity: ${data.main.humidity}%`; 
+
     })
     .catch(error => {
       console.error(error);
