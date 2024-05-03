@@ -1,10 +1,15 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 2rem;
-    text-align: center;
-    background-color: #ffffff;
+  font-family: 'Roboto', sans-serif; 
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f7f7f7; 
 }
+
+body {
+  background-color: #eaeaea;
+}
+
 .search-container {
     display: flex;
     justify-content: center;
